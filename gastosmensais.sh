@@ -39,8 +39,12 @@ done
 gasto_total=$(echo "$gastos_fixos_total + $gastos_v_total + $cofrinhos_total" | bc )
 echo "O gasto total é: R$ $gasto_total"                      
 
+#saldo final
 salario_total=$(echo "$salario" - "$gasto_total" | bc)
 echo "Vc ficará com um total de: R$ $salario_total"
+
+percentual_gasto=$(echo "scale=2; ($gasto_total / $salario) * 100" | bc)
+echo "Percentual do salário gasto é de $percentual_gasto%"
 
 
 
