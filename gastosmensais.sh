@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#salário
+salario=3100.0
+
 #arrays de categorias
 gastos_fixos=(aluguel ônibus celular mercado)
 gastos_variaveis=(agua credito)
@@ -36,6 +39,8 @@ done
 gasto_total=$(echo "$gastos_fixos_total + $gastos_v_total + $cofrinhos_total" | bc )
 echo "O gasto total é: R$ $gasto_total"                      
 
+salario_total=$(echo "$salario" - "$gasto_total" | bc)
+echo "Vc ficará com um total de: R$ $salario_total"
 
 
 
